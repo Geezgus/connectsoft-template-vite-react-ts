@@ -2,10 +2,21 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
 import path from 'node:path';
+import { tanstackRouter } from '@tanstack/router-plugin/vite';
 
 // https://vite.dev/config/
 export default defineConfig({
-	plugins: [react(), tailwindcss()],
+	plugins: [
+		tanstackRouter({
+			target: 'react',
+			autoCodeSplitting: true,
+			generatedRouteTree: './src/route-tree.gen.ts',
+			routesDirectory: path.resolve(__dirname, './src/pages'),
+			routeToken: 'layout',
+		}),
+		react(),
+		tailwindcss(),
+	],
 	resolve: {
 		alias: {
 			'@': path.resolve(__dirname, './src'),
