@@ -1,0 +1,7 @@
+pre-commit:
+  jobs:
+    - name: lint codebase
+      run: pnpm run lint
+
+    - name: format codebase
+      run: pnpm run format
