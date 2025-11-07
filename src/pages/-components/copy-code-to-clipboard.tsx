@@ -1,10 +1,11 @@
 import { CheckIcon, CopyIcon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
 
-export function CopyCodeToClipboard({ installation }: { installation: string[] }) {
+export function CopyCodeToClipboard({ packages }: { packages: string[] }) {
 	const [hasCopied, setHasCopied] = useState(false);
+	const formattedPackages = useMemo(() => packages.join(' '), [packages]);
 
 	useEffect(() => {
 		if (hasCopied) {
@@ -14,7 +15,7 @@ export function CopyCodeToClipboard({ installation }: { installation: string[] }
 	}, [hasCopied]);
 
 	function copy() {
-		navigator.clipboard.writeText(installation.join('\n'));
+		navigator.clipboard.writeText(formattedPackages);
 		setHasCopied(true);
 	}
 
@@ -35,13 +36,11 @@ export function CopyCodeToClipboard({ installation }: { installation: string[] }
 			</Tooltip>
 
 			<div className="no-scrollbar overflow-x-auto">
-				{installation.map((command) => (
-					<pre>
-						<code className="relative font-mono text-sm leading-none" data-language="bash">
-							{command}
-						</code>
-					</pre>
-				))}
+				<pre>
+					<code className="relative font-mono text-sm leading-none" data-language="bash">
+						{formattedPackages}
+					</code>
+				</pre>
 			</div>
 		</div>
 	);
