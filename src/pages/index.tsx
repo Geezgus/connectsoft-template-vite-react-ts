@@ -1,10 +1,11 @@
 import { ArrowUpRightIcon, FolderCodeIcon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
+import { Card, CardContent, CardFooter } from '@/components/ui/card';
 import { Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from '@/components/ui/empty';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { createFileRoute } from '@tanstack/react-router';
 import { CopyCodeToClipboard } from './-components/copy-code-to-clipboard';
+import { GithubForksBadge, GithubStargazersBadge, GithubWatchersBadge } from './-components/github-badge';
 
 export const Route = createFileRoute('/')({
 	component: RouteComponent,
@@ -28,6 +29,12 @@ const stack: StackItem[] = [
 		description: 'Type-safe Routing for React and Solid applications',
 		link: 'https://tanstack.com/router/latest',
 		name: 'TanStack Router',
+	},
+	{
+		packages: ['@tanstack/react-query', '@tanstack/eslint-plugin-query'],
+		description: 'Powerful asynchronous state management, server-state utilities and data fetching',
+		link: 'https://tanstack.com/query/latest',
+		name: 'TanStack Query',
 	},
 ];
 
@@ -75,6 +82,11 @@ function RouteComponent() {
 						</Button>
 					</Empty>
 				</CardContent>
+				<CardFooter className="flex gap-2 justify-end">
+					<GithubStargazersBadge owner="geezgus" repo="connectsoft-template-vite-react-ts" />
+					<GithubWatchersBadge owner="geezgus" repo="connectsoft-template-vite-react-ts" />
+					<GithubForksBadge owner="geezgus" repo="connectsoft-template-vite-react-ts" />
+				</CardFooter>
 			</Card>
 		</main>
 	);
