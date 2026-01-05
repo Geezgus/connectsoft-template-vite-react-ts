@@ -7,13 +7,13 @@ import { InputGroup, InputGroupAddon, InputGroupInput } from '@/components/ui/in
 import { createFileRoute } from '@tanstack/react-router';
 import { useId } from 'react';
 import { MailIcon } from 'lucide-react';
-import { RequestLinkButton } from './-components/request-link-button';
+import { RequestLinkButton } from '@/components/request-link-button';
 
 const formSchema = z.object({
 	email: z.email('Email is invalid.'),
 });
 
-export const Route = createFileRoute('/login/')({
+export const Route = createFileRoute('/login')({
 	component: RouteComponent,
 });
 
@@ -29,7 +29,7 @@ function RouteComponent() {
 			await new Promise((resolve) => setTimeout(resolve, 500));
 			toast.success('Login link was successfully sent to your email.');
 		},
-	});
+	})
 	const formId = useId();
 
 	return (
@@ -43,7 +43,7 @@ function RouteComponent() {
 					<form
 						id={formId}
 						onSubmit={async (e) => {
-							e.preventDefault();
+							e.preventDefault()
 							await form.handleSubmit();
 						}}
 					>
@@ -65,13 +65,13 @@ function RouteComponent() {
 													onBlur={field.handleBlur}
 													onChange={(e) => field.handleChange(e.target.value)}
 													aria-invalid={isInvalid}
-													placeholder="Enter your email address"
-													autoComplete="off"
+													placeholder='Enter your email address'
+													autoComplete='off'
 												/>
 											</InputGroup>
 											{isInvalid && <FieldError errors={field.state.meta.errors} />}
 										</Field>
-									);
+									)
 								}}
 							</form.Field>
 						</FieldGroup>
@@ -88,5 +88,5 @@ function RouteComponent() {
 				</CardFooter>
 			</Card>
 		</main>
-	);
+	)
 }

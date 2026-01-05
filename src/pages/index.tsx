@@ -4,8 +4,8 @@ import { Card, CardContent, CardFooter } from '@/components/ui/card';
 import { Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from '@/components/ui/empty';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { createFileRoute, Link } from '@tanstack/react-router';
-import { CopyCodeToClipboard } from './-components/copy-code-to-clipboard';
-import { GithubForksBadge, GithubStargazersBadge, GithubWatchersBadge } from './-components/github-badge';
+import { CopyCodeToClipboard } from '@/components/copy-code-to-clipboard';
+import { GithubForksBadge, GithubStargazersBadge, GithubWatchersBadge } from '@/components/github-badge';
 
 export const Route = createFileRoute('/')({
 	component: RouteComponent,
