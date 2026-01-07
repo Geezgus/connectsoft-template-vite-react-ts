@@ -48,8 +48,8 @@ function RouteComponent() {
 	return (
 		<div className="min-h-svh flex flex-col">
 			<header className="self-end p-4">
-				<Button variant="link" asChild>
-					<Link to="/login">Login</Link>
+				<Button variant="link" render={<Link to="/login" />}>
+					Login
 				</Button>
 			</header>
 			<main className="px-4 flex-1 flex flex-col gap-4 items-center justify-center">
@@ -68,7 +68,7 @@ function RouteComponent() {
 							<EmptyContent>
 								<EmptyDescription className="w-full">
 									This template uses the following stack:{' '}
-									<Accordion className="w-full" type="single" collapsible>
+									<Accordion className="w-full">
 										{stack.map(({ description, packages, link, name }) => (
 											<AccordionItem className="text-start" key={name} value={name}>
 												<AccordionTrigger>{name}</AccordionTrigger>
@@ -87,10 +87,13 @@ function RouteComponent() {
 									</Accordion>
 								</EmptyDescription>
 							</EmptyContent>
-							<Button variant="link" asChild className="text-muted-foreground" size="sm">
-								<a href="https://github.com/geezgus/connectsoft-template-vite-react-ts">
-									Learn About This Template <ArrowUpRightIcon />
-								</a>
+							<Button
+								variant="link"
+								render={<a href="https://github.com/geezgus/connectsoft-template-vite-react-ts" />}
+								className="text-muted-foreground"
+								size="sm"
+							>
+								Learn About This Template <ArrowUpRightIcon />
 							</Button>
 						</Empty>
 					</CardContent>

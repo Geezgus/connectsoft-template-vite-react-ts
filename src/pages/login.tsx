@@ -29,7 +29,7 @@ function RouteComponent() {
 			await new Promise((resolve) => setTimeout(resolve, 500));
 			toast.success('Login link was successfully sent to your email.');
 		},
-	})
+	});
 	const formId = useId();
 
 	return (
@@ -43,7 +43,7 @@ function RouteComponent() {
 					<form
 						id={formId}
 						onSubmit={async (e) => {
-							e.preventDefault()
+							e.preventDefault();
 							await form.handleSubmit();
 						}}
 					>
@@ -65,13 +65,13 @@ function RouteComponent() {
 													onBlur={field.handleBlur}
 													onChange={(e) => field.handleChange(e.target.value)}
 													aria-invalid={isInvalid}
-													placeholder='Enter your email address'
-													autoComplete='off'
+													placeholder="Enter your email address"
+													autoComplete="off"
 												/>
 											</InputGroup>
 											{isInvalid && <FieldError errors={field.state.meta.errors} />}
 										</Field>
-									)
+									);
 								}}
 							</form.Field>
 						</FieldGroup>
@@ -88,5 +88,5 @@ function RouteComponent() {
 				</CardFooter>
 			</Card>
 		</main>
-	)
+	);
 }

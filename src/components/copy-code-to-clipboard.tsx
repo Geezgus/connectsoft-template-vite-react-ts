@@ -22,15 +22,17 @@ export function CopyCodeToClipboard({ packages }: { packages: string[] }) {
 	return (
 		<div className="bg-secondary rounded pl-4 pr-10 py-2 relative">
 			<Tooltip>
-				<TooltipTrigger asChild>
-					<Button
-						size="icon"
-						variant="ghost"
-						className="absolute top-1 right-1 z-10 size-7 opacity-70 hover:opacity-100 focus-visible:opacity-100"
-						onClick={() => copy()}
-					>
-						{hasCopied ? <CheckIcon /> : <CopyIcon />}
-					</Button>
+				<TooltipTrigger
+					render={
+						<Button
+							size="icon"
+							variant="ghost"
+							className="absolute top-1 right-1 z-10 size-7 opacity-70 hover:opacity-100 focus-visible:opacity-100"
+							onClick={() => copy()}
+						/>
+					}
+				>
+					{hasCopied ? <CheckIcon /> : <CopyIcon />}
 				</TooltipTrigger>
 				<TooltipContent>{hasCopied ? 'Copied' : 'Copy to Clipboard'}</TooltipContent>
 			</Tooltip>
