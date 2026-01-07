@@ -58,13 +58,13 @@ function GithubBadge({ owner, repo, metric, ...props }: GithubBadgeProps & Compo
 }
 
 export function GithubStargazersBadge(props: Omit<ComponentProps<typeof GithubBadge>, 'metric'>) {
-	return <GithubBadge className="text-yellow-600" {...props} metric="stargazers_count" />;
+	return <GithubBadge className="dark:text-yellow-400 text-yellow-600" {...props} metric="stargazers_count" />;
 }
 
 export function GithubWatchersBadge(props: Omit<ComponentProps<typeof GithubBadge>, 'metric'>) {
-	return <GithubBadge className="text-zinc-600" {...props} metric="watchers_count" />;
+	return <GithubBadge className="dark:text-zinc-400 text-zinc-600" {...props} metric="watchers_count" />;
 }
 
 export function GithubForksBadge(props: Omit<ComponentProps<typeof GithubBadge>, 'metric'>) {
-	return <GithubBadge className="text-blue-600" {...props} metric="forks_count" />;
+	return <GithubBadge className="dark:text-blue-400 text-blue-600" {...props} metric="forks_count" />;
 }
