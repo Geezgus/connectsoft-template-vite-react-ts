@@ -1,4 +1,4 @@
-import { ArrowUpRightIcon, FolderCodeIcon } from 'lucide-react';
+import { IconArrowUpRight, IconFolderCode } from '@tabler/icons-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
 import { Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from '@/components/ui/empty';
@@ -58,7 +58,7 @@ function RouteComponent() {
 						<Empty>
 							<EmptyHeader>
 								<EmptyMedia variant="icon">
-									<FolderCodeIcon />
+									<IconFolderCode />
 								</EmptyMedia>
 								<EmptyTitle>This project is empty</EmptyTitle>
 								<EmptyDescription>
@@ -93,7 +93,7 @@ function RouteComponent() {
 								className="text-muted-foreground"
 								size="sm"
 							>
-								Learn About This Template <ArrowUpRightIcon />
+								Learn About This Template <IconArrowUpRight />
 							</Button>
 						</Empty>
 					</CardContent>

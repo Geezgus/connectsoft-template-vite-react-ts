@@ -1,4 +1,4 @@
-import { EyeIcon, GitForkIcon, StarIcon } from 'lucide-react';
+import { IconEye, IconGitFork, IconStar } from '@tabler/icons-react';
 import { Skeleton } from '@/components/ui/skeleton';
 import { useQuery } from '@tanstack/react-query';
 import { Badge } from '@/components/ui/badge';
@@ -18,9 +18,9 @@ type GithubBadgeProps = {
 };
 
 const METRICS = {
-	stargazers_count: { label: 'Stargazers', Icon: StarIcon },
-	watchers_count: { label: 'Watchers', Icon: EyeIcon },
-	forks_count: { label: 'Forks', Icon: GitForkIcon },
+	stargazers_count: { label: 'Stargazers', Icon: IconStar },
+	watchers_count: { label: 'Watchers', Icon: IconEye },
+	forks_count: { label: 'Forks', Icon: IconGitFork },
 } satisfies Record<keyof GithubRepositoryData, { label: string; Icon: ComponentType<SVGProps<SVGSVGElement>> }>;
 
 function useGithubRepoQuery(owner: string, repo: string) {

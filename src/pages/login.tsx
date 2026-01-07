@@ -6,7 +6,7 @@ import { Field, FieldError, FieldGroup, FieldLabel } from '@/components/ui/field
 import { InputGroup, InputGroupAddon, InputGroupInput } from '@/components/ui/input-group';
 import { createFileRoute } from '@tanstack/react-router';
 import { useId } from 'react';
-import { MailIcon } from 'lucide-react';
+import { IconMail } from '@tabler/icons-react';
 import { RequestLinkButton } from '@/components/request-link-button';
 
 const formSchema = z.object({
@@ -56,7 +56,7 @@ function RouteComponent() {
 											<FieldLabel htmlFor={field.name}></FieldLabel>
 											<InputGroup>
 												<InputGroupAddon>
-													<MailIcon />
+													<IconMail />
 												</InputGroupAddon>
 												<InputGroupInput
 													id={field.name}

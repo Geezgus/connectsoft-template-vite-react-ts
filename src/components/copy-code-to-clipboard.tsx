@@ -1,4 +1,4 @@
-import { CheckIcon, CopyIcon } from 'lucide-react';
+import { IconCheck, IconCopy } from '@tabler/icons-react';
 import { Button } from '@/components/ui/button';
 import { useEffect, useMemo, useState } from 'react';
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
@@ -32,7 +32,7 @@ export function CopyCodeToClipboard({ packages }: { packages: string[] }) {
 						/>
 					}
 				>
-					{hasCopied ? <CheckIcon /> : <CopyIcon />}
+					{hasCopied ? <IconCheck /> : <IconCopy />}
 				</TooltipTrigger>
 				<TooltipContent>{hasCopied ? 'Copied' : 'Copy to Clipboard'}</TooltipContent>
 			</Tooltip>
